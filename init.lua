@@ -17,8 +17,9 @@ require("lazy").setup({
 	{ import = "plugins.lsp" },
 	{ import = "plugins.styling" },
 	{ import = "plugins.utils" },
-	{ import = "plugins.external.obsidian" },
+	--{ import = "plugins.external.obsidian" },
 	{ import = "plugins.external.markdown" },
+  { 'neoclide/coc.nvim', branch = 'release', },
   {
     "pixelastic/vim-undodir-tree"
   }

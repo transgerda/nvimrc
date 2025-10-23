@@ -9,16 +9,12 @@ return {
     "saghen/blink.cmp",
     {"aznhe21/actions-preview.nvim", opts = {}},
     {
-      "hedyhli/outline.nvim",
-      opts = {
-        preview_window = {
-          auto_preview = true,
+      "hedyhli/outline.nvim", opts = { preview_window = { auto_preview = true,
         }
       },
       config = function(_, opts)
         -- Example mapping to toggle outline
-        vim.keymap.set("n", "<leader>na", "<cmd>Outline<CR>",
-          { desc = "Toggle Outline" })
+        vim.keymap.set("n", "<leader>na", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
 
         require("outline").setup (
           opts
