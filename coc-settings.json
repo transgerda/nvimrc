@@ -1,0 +1,5 @@
+{
+  "phpactor.enable": true,
+  "phpacotr.config" : "~/.config/nvim/phpactor.json"
+}
+
