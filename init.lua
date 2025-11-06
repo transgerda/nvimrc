@@ -20,9 +20,7 @@ require("lazy").setup({
 	--{ import = "plugins.external.obsidian" },
 	{ import = "plugins.external.markdown" },
   { 'neoclide/coc.nvim', branch = 'release', },
-  {
-    "pixelastic/vim-undodir-tree"
-  }
+  { 'pixelastic/vim-undodir-tree' }
 }, {})
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
@@ -30,3 +28,5 @@ require("lazy").setup({
 if vim.g.neovide then
   require("neovide")
 end
+
+vim.api.nvim_set_keymap('i', '<tab>', 'pumvisible() ? coc#_select_confirm() : "<C-g>u<Tab>"', { noremap = true, expr = true, silent = true })

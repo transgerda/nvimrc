@@ -27,6 +27,7 @@ keymap("n", "N", "Nzz")
 
 keymap("n", "<leader>;", "A;<Esc>")
 
+keymap("n", "<leader>v", "<cmd>vsplit<CR>")
 keymap("n", "<leader>w", "<cmd>w<CR>", { desc = "soft save" })
 keymap("n", "<leader>W", "<cmd>w!<CR>", { desc = "hard save" })
 keymap("n", "<leader>q", "<cmd>q<CR>", { desc = "soft quit" })
@@ -63,7 +64,7 @@ keymap("n", "<leader>e", function()
 end)
 
 -- Self descriptive
-keymap("n", "<leader>l", "<cmd>Lazy<CR>")
+--keymap("n", "<leader>l", "<cmd>Lazy<CR>")
 
 -- Tab utils
 keymap("n", "<leader>tn", "<cmd>tabnext<CR>")

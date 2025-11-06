@@ -1,5 +1,13 @@
 {
-  "phpactor.enable": true,
-  "phpacotr.config" : "~/.config/nvim/phpactor.json"
+  "suggest.noselect": true,
+  "suggest.autoTrigger": "always",
+  "languageserver": {
+    "php": {
+      "command": "php",
+      "args": ["-S", "localhost:8000"],
+      "filetypes": ["php"],
+      "initializationOptions": {}
+    }
+  }
 }
 
