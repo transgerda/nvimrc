@@ -2,7 +2,7 @@ return {
   'saghen/blink.cmp',
   dependencies = { 'L3MON4D3/LuaSnip' },
   version = '1.*',
-  ft = { "lua", "rust", "html", "js", "ts", "json", "css" },
+  ft = { "lua", "rust", "html", "js", "ts", "json", "css", "php" },
 
   opts = {
     snippets = { preset = "luasnip" },

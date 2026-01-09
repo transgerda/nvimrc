@@ -17,7 +17,8 @@ return {
       ensure_installed = {
         "html",
         "lua",
-        "blade",
+        "c_sharp",
+        "razor",
       },
       -- Automatically install missing parsers when entering buffer
       -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally

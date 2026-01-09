@@ -30,3 +30,9 @@ if vim.g.neovide then
 end
 
 vim.api.nvim_set_keymap('i', '<tab>', 'pumvisible() ? coc#_select_confirm() : "<C-g>u<Tab>"', { noremap = true, expr = true, silent = true })
+
+require("neotest").setup({
+  adapters = {
+    require("neotest-dotnet")
+  }
+})
