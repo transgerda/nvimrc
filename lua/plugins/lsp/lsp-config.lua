@@ -7,7 +7,6 @@ return {
   dependencies = {
     { "j-hui/fidget.nvim", opts = {} },
     { "folke/neodev.nvim", opts = {} },
-    "saghen/blink.cmp",
     {"aznhe21/actions-preview.nvim", opts = {}},
     {
       "hedyhli/outline.nvim", opts = { preview_window = { auto_preview = true,

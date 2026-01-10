@@ -19,7 +19,7 @@ require("lazy").setup({
 	{ import = "plugins.utils" },
 	--{ import = "plugins.external.obsidian" },
 	{ import = "plugins.external.markdown" },
-  { 'neoclide/coc.nvim', branch = 'release', },
+  --{ 'neoclide/coc.nvim', branch = 'release', },
   { 'pixelastic/vim-undodir-tree' }
 }, {})
 -- The line beneath this is called `modeline`. See `:help modeline`
