@@ -1,11 +1,8 @@
-return   { "seblyng/roslyn.nvim",
+return { "seblyng/roslyn.nvim",
     ---@module 'roslyn.config'
     ---@type RoslynNvimConfig
     ft = { "cs", "razor" },
     opts = {
-        -- Path to the .NET SDK you want Roslyn to use
-        dotnet_root = "/nix/store/hbm4r1n5aa3wca0d2960p6nyxv1l6c0x-dotnet-sdk-9.0.112/share/dotnet",
-    
         -- Make Roslyn pick the project root based on .csproj or .sln
         root_dir = function(fname)
           return require("lspconfig.util").root_pattern("*.csproj", "*.sln")(fname) or vim.fn.getcwd()
@@ -16,9 +13,6 @@ return   { "seblyng/roslyn.nvim",
         enable_editorconfig_support = true,
     },
     config = function()
-            -- Use one of the methods in the Integration section to compose the command.
-            local cmd = {}
-
             vim.lsp.config("roslyn", {
                 cmd = cmd,
                 settings = {
@@ -42,15 +36,16 @@ return   { "seblyng/roslyn.nvim",
                     },
                 },
             })
+
             vim.lsp.enable("roslyn")
         end,
         init = function()
             -- We add the Razor file types before the plugin loads.
-            vim.filetype.add({
-                extension = {
-                    razor = "razor",
-                    cshtml = "razor",
-                },
-            })
+        vim.filetype.add({
+            extension = {
+                razor = "razor",
+                cshtml = "razor",
+            },
+        })
     end,
 }

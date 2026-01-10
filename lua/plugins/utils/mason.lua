@@ -23,8 +23,8 @@ return {
 
         -- !
         "roslyn",
-        -- "csharp-language-server",
-        -- "omnisharp",
+        "csharp-language-server",
+        "omnisharp",
       }
     }
   }

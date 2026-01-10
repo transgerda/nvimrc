@@ -93,14 +93,15 @@ return {
           max_items = 15,
           min_keyword_length = 1,
           module = "blink.cmp.sources.snippets",
-          score_offset = 85, -- the higher the number, the higher the priority
+          score_offset = 100, -- the higher the number, the higher the priority
           -- Only show snippets if I type the trigger_text characters, so
           -- to expand the "bash" snippet, if the trigger_text is ";" I have to
           should_show_items = function()
-            local col = vim.api.nvim_win_get_cursor(0)[2]
-            local before_cursor = vim.api.nvim_get_current_line():sub(1, col)
-            -- NOTE: remember that `trigger_text` is modified at the top of the file
-            return before_cursor:match(trigger_text .. "%w*$") ~= nil
+          --  local col = vim.api.nvim_win_get_cursor(0)[2]
+          --  local before_cursor = vim.api.nvim_get_current_line():sub(1, col)
+          --  -- NOTE: remember that `trigger_text` is modified at the top of the file
+          --  return before_cursor:match(trigger_text .. "%w*$") ~= nil
+            return true;
           end,
           -- After accepting the completion, delete the trigger_text characters
           -- from the final inserted text

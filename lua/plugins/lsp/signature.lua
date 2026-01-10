@@ -1,23 +1,17 @@
 return {
-	"ray-x/lsp_signature.nvim",
-	event = "VeryLazy",
-	opts = {},
-	config = function(_, opts)
-		require("lsp_signature").setup(opts)
+    "ray-x/lsp_signature.nvim",
+    event = "VeryLazy",
+    opts = {},
+    config = function(_, opts)
+        --require("lsp_signature").setup(opts)
 
-        -- Only attach for desired filetypes
+        -- Attach only for desired filetypes
+        local allowed_filetypes = { "lua", "rust", "ts", "js", "php" }
         local ft = vim.bo.filetype
-        local allowed = {
-            cs = true,
-            lua = true,
-            rust = true,
-            ts = true,
-            js = true,
-            php = true,
-        }
-    
-        if allowed[ft] then
+
+        if vim.tbl_contains(allowed_filetypes, ft) then
             require("lsp_signature").setup(opts)
         end
     end,
 }
+
