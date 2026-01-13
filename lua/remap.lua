@@ -79,3 +79,9 @@ vim.keymap.set({"n", "v"}, "J", "j")
 vim.keymap.set("n", "<C-c>", "gcc", { remap = true })
 vim.keymap.set("v", "<C-c>", "gc",  { remap = true })
 
+vim.api.nvim_set_keymap(
+  'n',
+  '<leader>=',
+  "<cmd>lua require('fzf-lua').files()<CR>",
+  { noremap = true, silent = true }
+)
