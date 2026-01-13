@@ -85,3 +85,4 @@ vim.api.nvim_set_keymap(
   "<cmd>lua require('fzf-lua').files()<CR>",
   { noremap = true, silent = true }
 )
+

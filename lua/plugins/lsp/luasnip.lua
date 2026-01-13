@@ -47,5 +47,10 @@ return {
         i(1, "cond"), t(" ? "), i(2, "then"), t(" : "), i(3, "else")
       })
     })
+
+    ls.add_snippets('php', {
+        s("func", t("func")),
+        s("funcargs", fmt("func({})", { i(1) })),
+    })
   end,
 }
