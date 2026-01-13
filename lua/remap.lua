@@ -74,7 +74,7 @@ keymap("n", "<leader>tp", "<cmd>tabprevious<CR>")
 keymap("n", "<<leader>", "<<", {desc = "Indent left"})
 keymap("n", "><leader>", ">>", {desc = "Indent right"})
 
-vim.keymap.set("n", "J", "j")
+vim.keymap.set({"n", "v"}, "J", "j")
 
 vim.keymap.set("n", "<C-c>", "gcc", { remap = true })
 vim.keymap.set("v", "<C-c>", "gc",  { remap = true })
