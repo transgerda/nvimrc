@@ -227,12 +227,12 @@ return {
       --     range = "full",
       --   },
       menu = {
-        border = "single",
+        border = "rounded",
       },
       documentation = {
         auto_show = true,
         window = {
-          border = "single",
+          border = "rounded",
         },
       },
     }
@@ -280,6 +280,48 @@ return {
 
       ["<C-j>"] = { "accept", "fallback" },
     }
+
+-- Ayu-inspired completion menu (Blink / Pmenu)
+
+-- Base popup
+vim.api.nvim_set_hl(0, "Pmenu", {
+  bg = "#0f1419",  -- ayu dark background
+  fg = "#bfbdb6",
+})
+
+-- Selected item
+vim.api.nvim_set_hl(0, "PmenuSel", {
+  bg = "#253340",  -- ayu selection blue-gray
+  fg = "#e6e1cf",
+  bold = true,
+})
+
+-- Scrollbar
+vim.api.nvim_set_hl(0, "PmenuSbar", {
+  bg = "#151a1e",
+})
+
+vim.api.nvim_set_hl(0, "PmenuThumb", {
+  bg = "#3d424d",
+})
+
+-- Floating docs window
+vim.api.nvim_set_hl(0, "NormalFloat", {
+  bg = "#0f1419",
+  fg = "#c7c7c7",
+})
+
+-- Border
+vim.api.nvim_set_hl(0, "FloatBorder", {
+  fg = "#5ccfe6", -- ayu cyan accent
+  bg = "#0f1419",
+})
+
+-- Blink-specific (optional but clean)
+vim.api.nvim_set_hl(0, "BlinkCmpMenu", { link = "Pmenu" })
+vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { link = "PmenuSel" })
+vim.api.nvim_set_hl(0, "BlinkCmpDoc", { link = "NormalFloat" })
+
 
     return opts
   end,
