@@ -81,10 +81,10 @@ return {
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities())
 
-    local lspconfig = require('lspconfig') 
+    local lspconfig = require('lspconfig')
     local lsp = vim.lsp.config
 
-    for key, value in pairs({ lsp.ts_ls, lsp.biome, lsp.html, lsp.emmet_language_server, lsp.emmet_ls, lsp.cssls, lsp.tailwindcss, lsp.clangd, lsp.taplo, lsp.sqlls, lsp.jsonls, lsp.bashls, lsp.hls, lsp.nixd, lsp.csharp_ls, lsp.asm_lsp, lsp.dartls, lsp.arduino_language_server, lsp.svelte, lsp.tinymist }) do
+    for key, value in pairs({ lsp.ts_ls, lsp.biome, lsp.html, lsp.emmet_language_server, lsp.emmet_ls, lsp.cssls, lsp.tailwindcss, lsp.clangd, lsp.taplo, lsp.sqlls, lsp.jsonls, lsp.bashls, lsp.hls, lsp.nixd, lsp.csharp_ls, lsp.asm_lsp, lsp.dartls, lsp.arduino_language_server, lsp.svelte, lsp.tinymist, lsp.intelephense }) do
       value.capabilities = capabilities
     end
 
@@ -97,6 +97,41 @@ return {
         -- diagnostics = { disable = { 'missing-fields' } },
       },
     }
+
+    vim.lsp.config.intelephense = {
+      settings = {
+        intelephense = {
+          environment = {
+            phpVersion = "8.4", -- adjust if needed
+            includePaths = {"./vendor"},
+          },
+          completion = {
+            fullyQualifyGlobalConstantsAndFunctions = false,
+            insertUseDeclaration = true,
+            triggerParameterHints = false,
+          },
+          format = {
+            enable = true,
+          },
+          diagnostics = {
+            enable = true,
+          },
+          files = {
+            exclude = { "**/.git/**", "**/node_modules/**", "**/storage/**" }
+          }
+        },
+      },
+    }
+    vim.lsp.enable({
+      "lua_ls",
+      "ts_ls",
+      "biome",
+      "html",
+      "cssls",
+      "jsonls",
+      "bashls",
+      "intelephense",
+    })
 
   end,
 }

@@ -248,6 +248,7 @@ return {
 
     opts.snippets = {
       preset = "luasnip", -- Choose LuaSnip as the snippet engine
+      enabled = false
     }
 
     -- -- To specify the options for snippets
@@ -277,7 +278,7 @@ return {
       ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
       ["<C-e>"] = { "hide", "fallback" },
 
-      ["<C-y>"] = { "accept", "fallback" },
+      ["<C-j>"] = { "accept", "fallback" },
     }
 
     return opts
