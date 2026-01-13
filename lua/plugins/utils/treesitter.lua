@@ -145,7 +145,7 @@ return {
     config = function(_, opts)
       require("nvim-treesitter.install").prefer_git = true
       ---@diagnostic disable-next-line: missing-fields
-      require("nvim-treesitter.configs").setup(opts)
+      require("nvim-treesitter.config").setup(opts)
 
       -- There are additional nvim-treesitter modules that you can use to interact
       -- with nvim-treesitter. You should go explore a few and see what interests you:
@@ -156,8 +156,8 @@ return {
       --
     end,
   },
-  {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    "nvim-treesitter/playground",
-  },
+  -- {
+    -- "nvim-treesitter/nvim-treesitter-textobjects",
+    -- "nvim-treesitter/playground",
+  -- },
 }
