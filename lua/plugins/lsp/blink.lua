@@ -24,6 +24,7 @@ return {
 	dependencies = {
 		"moyiz/blink-emoji.nvim",
 		"Kaiser-Yang/blink-cmp-dictionary",
+		"github/copilot.vim",
 	},
 	opts = function(_, opts)
 		-- I noticed that telescope was extremeley slow and taking too long to open,
@@ -193,16 +194,16 @@ return {
 						-- end,
 					},
 				},
-				-- -- Third class citizen mf always talking shit
-				-- copilot = {
-				--   name = "copilot",
-				--   enabled = true,
-				--   module = "blink-cmp-copilot",
-				--   kind = "Copilot",
-				--   min_keyword_length = 6,
-				--   score_offset = -100, -- the higher the number, the higher the priority
-				--   async = true,
-				-- },
+				-- Third class citizen mf always talking shit
+				copilot = {
+					name = "copilot",
+					enabled = true,
+					module = "blink-cmp-copilot",
+					kind = "Copilot",
+					min_keyword_length = 4,
+					score_offset = -100, -- the higher the number, the higher the priority
+					async = true,
+				},
 			},
 		})
 
@@ -280,6 +281,9 @@ return {
 
 			["<C-j>"] = { "accept", "fallback" },
 		}
+
+        vim.g.copilot_no_tab_map = true
+        vim.api.nvim_set_keymap("i", "<C-K>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
 		-- Ayu-inspired completion menu (Blink / Pmenu)
 
