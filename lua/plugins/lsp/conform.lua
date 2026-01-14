@@ -24,7 +24,7 @@ return {
 			lua = { "stylua" },
 			php = { "duster" },
 			blade = { "duster" },
-            js = { "prettier" },
+            javascript = { "prettier" },
 		},
 	},
 }

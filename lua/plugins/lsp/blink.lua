@@ -201,7 +201,7 @@ return {
 					module = "blink-cmp-copilot",
 					kind = "Copilot",
 					min_keyword_length = 4,
-					score_offset = -100, -- the higher the number, the higher the priority
+					score_offset = -200, -- the higher the number, the higher the priority
 					async = true,
 				},
 			},
@@ -279,11 +279,20 @@ return {
 			["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
 			["<C-e>"] = { "hide", "fallback" },
 
-			["<C-j>"] = { "accept", "fallback" },
+			["<C-J>"] = { "accept", "fallback" },
 		}
 
-        vim.g.copilot_no_tab_map = true
-        vim.api.nvim_set_keymap("i", "<C-K>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+		vim.g.copilot_no_tab_map = true
+		vim.api.nvim_set_keymap("i", "<C-K>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+		vim.keymap.set("n", "<leader>tc", function()
+			if vim.g.copilot_enabled == 1 then
+				vim.cmd("Copilot disable")
+				vim.notify("Copilot disabled")
+			else
+				vim.cmd("Copilot enable")
+				vim.notify("Copilot enabled")
+			end
+		end)
 
 		-- Ayu-inspired completion menu (Blink / Pmenu)
 
