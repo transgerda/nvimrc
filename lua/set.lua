@@ -73,9 +73,11 @@ end
 
 vim.opt.conceallevel = 1
 
-vim.filetype.add({
-  pattern = {
-    [".*%.blade%.php"] = "blade",
-  },
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "blade",
+  callback = function()
+    -- set commentstring for gc / comment.nvim
+    vim.bo.commentstring = "{{-- %s --}}"
+  end,
 })
 
