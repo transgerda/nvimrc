@@ -1,5 +1,6 @@
 vim.g.have_nerd_font = true
 -- vim.g.user_emmet_leader_key = '<C-Z>'
+vim.g.user_emmet_mode = "a"
 
 local opt = vim.opt
 

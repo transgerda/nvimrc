@@ -8,7 +8,6 @@ keymap("n", "<leader>dq", vim.diagnostic.setloclist, { desc = "Open diagnostic [
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 vim.g.user_emmet_update_tag = "<C-Z>u"
-
 vim.g.user_emmet_next_key = "<C-n>"
 
 keymap({ "i", "v" }, "uh", "<Esc>", { desc = "Exit insert/visual mode" })
