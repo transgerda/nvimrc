@@ -90,7 +90,7 @@ return {
 				},
 				snippets = {
 					name = "snippets",
-					enabled = true,
+					-- enabled = true,
 					max_items = 15,
 					min_keyword_length = 1,
 					module = "blink.cmp.sources.snippets",
@@ -199,7 +199,6 @@ return {
 					name = "copilot",
 					enabled = true,
 					module = "blink-cmp-copilot",
-					kind = "Copilot",
 					min_keyword_length = 4,
 					score_offset = -200, -- the higher the number, the higher the priority
 					async = true,

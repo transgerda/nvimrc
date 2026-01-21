@@ -72,3 +72,10 @@ else
 end
 
 vim.opt.conceallevel = 1
+
+vim.filetype.add({
+  pattern = {
+    [".*%.blade%.php"] = "blade",
+  },
+})
+

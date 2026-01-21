@@ -19,5 +19,6 @@ return {
 		vim.api.nvim_set_hl(0, "LineNr", { fg = "green" })
 		vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "lightred" })
 		vim.opt.cursorline = false
+
 	end,
 }

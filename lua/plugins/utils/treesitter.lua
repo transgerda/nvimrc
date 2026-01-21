@@ -17,6 +17,9 @@ return {
 			sync_install = false,
 			ensure_installed = {
 				"html",
+                "php",
+                "javascript",
+                "blade",
 			},
 			-- Automatically install missing parsers when entering buffer
 			-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
@@ -149,6 +152,17 @@ return {
 			--    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
 			--    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
 			--    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+
+            local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+            parser_config.blade = {
+              install_info = {
+                url = "https://github.com/EmranMR/tree-sitter-blade",
+                files = {"src/parser.c"},
+                branch = "main",
+              },
+              filetype = "blade"
+            }
+
 		end,
 	},
 	{

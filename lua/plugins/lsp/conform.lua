@@ -23,7 +23,7 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			php = { "duster" },
-			blade = { "duster" },
+			blade = { "blade-formatter" },
             javascript = { "biome" },
 		},
 	},
